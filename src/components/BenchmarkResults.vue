@@ -26,7 +26,7 @@
             {{ key }}: {{ value }}
           </li>
         </ul>
-        <p><strong>Endpoints:</strong></p>
+        <p class="endpoints-title"><strong>Endpoints:</strong></p>
         <div v-for="(endpoint, index) in config.endpoints" :key="index" class="endpoint-info">
           <p><strong>Path:</strong> {{ endpoint.path }}</p>
           <p><strong>Method:</strong> {{ endpoint.method }}</p>
@@ -159,9 +159,10 @@ export default {
 }
 
 .results-info {
-  margin-top: 30px;
+  margin-top: 300px;
   padding: 20px;
-  background-color: #f5f5f5;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
 }
 
@@ -172,7 +173,7 @@ export default {
 .endpoint-info {
   margin: 15px 0;
   padding: 15px;
-  background-color: white;
+  background-color: var(--card-bg);
   border-radius: 4px;
   border: 1px solid #ddd;
 }

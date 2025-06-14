@@ -59,6 +59,9 @@ export default {
 .benchmark-history {
   padding: 20px;
   max-width: 1200px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
   margin: 0 auto;
 }
 

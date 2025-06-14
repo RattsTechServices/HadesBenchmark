@@ -4,13 +4,13 @@
       <h2>Configuração Base</h2>
       <div class="form-group">
         <label>Base URL:</label>
-        <input v-model="baseUrl" type="text" placeholder="https://api.example.com" />
+        <input v-model="baseUrl" type="text" placeholder="https://api.example.com" class="input-field"/>
       </div>
       <div class="form-group">
         <label>Headers:</label>
         <div v-for="(header, index) in headers" :key="index" class="header-input">
-          <input v-model="header.key" placeholder="Key" />
-          <input v-model="header.value" placeholder="Value" />
+          <input v-model="header.key" placeholder="Key" class="input-field"/>
+          <input v-model="header.value" placeholder="Value" class="input-field"/>
           <button @click="removeHeader(index)" class="remove-btn">-</button>
         </div>
         <button @click="addHeader" class="add-btn">+ Adicionar Header</button>
@@ -22,7 +22,7 @@
       <div v-for="(endpoint, index) in endpoints" :key="index" class="endpoint-card">
         <div class="form-group">
           <label>Path:</label>
-          <input v-model="endpoint.path" placeholder="/api/endpoint" />
+          <input v-model="endpoint.path" placeholder="/api/endpoint" class="input-field"/>
         </div>
         <div class="form-group">
           <label>Method:</label>
@@ -35,15 +35,15 @@
         </div>
         <div class="form-group">
           <label>Requests per second:</label>
-          <input v-model.number="endpoint.rps" type="number" min="1" />
+          <input v-model.number="endpoint.rps" type="number" min="1" class="input-field"/>
         </div>
         <div class="form-group">
           <label>Duração (segundos):</label>
-          <input v-model.number="endpoint.duration" type="number" min="1" />
+          <input v-model.number="endpoint.duration" type="number" min="1" class="input-field"/>
         </div>
         <div class="form-group" v-if="endpoint.method !== 'GET'">
           <label>Request Body (JSON):</label>
-          <textarea v-model="endpoint.body" placeholder="{ }"></textarea>
+          <textarea v-model="endpoint.body" placeholder="{ }" class="input-field"></textarea>
         </div>
         <button @click="removeEndpoint(index)" class="remove-btn">Remover Endpoint</button>
       </div>
@@ -121,6 +121,13 @@ export default {
 </script>
 
 <style scoped>
+.input-field {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--text-color);
+}
+
 .benchmark-form {
   padding: 20px;
   max-width: 800px;
