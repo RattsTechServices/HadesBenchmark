@@ -1,4 +1,4 @@
-# Hades Benchmark
+# 🔥 Hades Benchmark
 
 Uma ferramenta de benchmark de API desenvolvida com Vue.js e Electron, permitindo testar o desempenho de múltiplos endpoints simultaneamente.
 
