@@ -123,9 +123,16 @@ export default {
         this.durationInterval = null
       }
       this.isRunning = false
+      
+      // Emitir evento de conclusão com os resultados e configuração
+      this.$emit('complete', {
+        results: this.results,
+        config: this.config
+      })
     },
     cancel() {
       this.stopBenchmark()
+      this.$emit('cancel')
     }
   },
   beforeUnmount() {

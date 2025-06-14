@@ -18,7 +18,7 @@
         </div>
         <div class="stat-item">
           <span class="stat-label">Tempo Médio de Resposta:</span>
-          <span class="stat-value">{{ stats.avgResponseTime }}ms</span>
+          <span class="stat-value">{{ (stats.avgResponseTime).toFixed(2) }}ms</span>
         </div>
         <div class="stat-item">
           <span class="stat-label">Taxa de Sucesso:</span>

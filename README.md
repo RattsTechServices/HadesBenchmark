@@ -1,154 +1,158 @@
-# 🔥 Hades Benchmark
+<div align="center">
+  <img src="public/screen.png" />
 
-Uma ferramenta de benchmark de API desenvolvida com Vue.js e Electron, permitindo testar o desempenho de múltiplos endpoints simultaneamente.
+  # 🔥 Hades Benchmark
+</div>
 
-## Características
+  Uma ferramenta de benchmark de API desenvolvida com Vue.js e Electron, permitindo testar o desempenho de múltiplos endpoints simultaneamente.
 
-- Interface gráfica intuitiva
-- Suporte a múltiplos endpoints simultâneos
-- Configuração personalizada de headers
-- Métodos HTTP: GET, POST, PUT, DELETE
-- Gráficos em tempo real
-- Estatísticas detalhadas
-- Suporte a corpo de requisição JSON
-- Configuração de requisições por segundo
-- Duração personalizada por endpoint
+  ## Características
 
-## Requisitos
+  - Interface gráfica intuitiva
+  - Suporte a múltiplos endpoints simultâneos
+  - Configuração personalizada de headers
+  - Métodos HTTP: GET, POST, PUT, DELETE
+  - Gráficos em tempo real
+  - Estatísticas detalhadas
+  - Suporte a corpo de requisição JSON
+  - Configuração de requisições por segundo
+  - Duração personalizada por endpoint
 
-- Node.js 14.x ou superior
-- npm 6.x ou superior
+  ## Requisitos
 
-## Instalação
+  - Node.js 14.x ou superior
+  - npm 6.x ou superior
 
-1. Clone o repositório:
-```bash
-git clone https://github.com/seu-usuario/hades-benchmark.git
-cd hades-benchmark
-```
+  ## Instalação
 
-2. Instale as dependências:
-```bash
-npm install
-```
+  1. Clone o repositório:
+  ```bash
+  git clone https://github.com/seu-usuario/hades-benchmark.git
+  cd hades-benchmark
+  ```
 
-## Execução
+  2. Instale as dependências:
+  ```bash
+  npm install
+  ```
 
-### Modo Desenvolvimento
+  ## Execução
 
-Para executar em modo de desenvolvimento:
+  ### Modo Desenvolvimento
 
-```bash
-npm run serve
-```
+  Para executar em modo de desenvolvimento:
 
-A aplicação estará disponível em `http://localhost:3400`
+  ```bash
+  npm run serve
+  ```
 
-### Modo Electron
+  A aplicação estará disponível em `http://localhost:3400`
 
-Para executar a versão desktop:
+  ### Modo Electron
 
-```bash
-npm run start
-```
+  Para executar a versão desktop:
 
-## Geração de Binários
+  ```bash
+  npm run start
+  ```
 
-### macOS
-```bash
-npm run build:mac
-```
-Gera:
-- `.dmg` (instalador)
-- `.zip` (versão portátil)
+  ## Geração de Binários
 
-### Linux
-```bash
-npm run build:linux
-```
-Gera:
-- `.AppImage` (versão portátil)
-- `.deb` (instalador para distribuições baseadas em Debian)
+  ### macOS
+  ```bash
+  npm run build:mac
+  ```
+  Gera:
+  - `.dmg` (instalador)
+  - `.zip` (versão portátil)
 
-### Windows
-```bash
-npm run build:win
-```
-Gera:
-- `.exe` (instalador NSIS)
-- `.exe` (versão portátil)
+  ### Linux
+  ```bash
+  npm run build:linux
+  ```
+  Gera:
+  - `.AppImage` (versão portátil)
+  - `.deb` (instalador para distribuições baseadas em Debian)
 
-Os binários serão gerados na pasta `dist_electron`.
+  ### Windows
+  ```bash
+  npm run build:win
+  ```
+  Gera:
+  - `.exe` (instalador NSIS)
+  - `.exe` (versão portátil)
 
-## Como Usar
+  Os binários serão gerados na pasta `dist_electron`.
 
-1. **Configuração Base**
-   - Insira a URL base da API (ex: `https://api.example.com`)
-   - Adicione os headers necessários (ex: Authorization, Content-Type)
+  ## Como Usar
 
-2. **Configuração de Endpoints**
-   - Clique em "+ Adicionar Endpoint"
-   - Configure para cada endpoint:
-     - Path (ex: `/api/users`)
-     - Método HTTP (GET, POST, PUT, DELETE)
-     - Requisições por segundo
-     - Duração em segundos
-     - Corpo da requisição (para métodos não-GET)
+  1. **Configuração Base**
+     - Insira a URL base da API (ex: `https://api.example.com`)
+     - Adicione os headers necessários (ex: Authorization, Content-Type)
 
-3. **Execução do Benchmark**
-   - Clique em "Iniciar Benchmark"
-   - Observe o gráfico em tempo real
-   - Acompanhe o tempo restante
-   - Use "Parar Benchmark" para interromper o teste
+  2. **Configuração de Endpoints**
+     - Clique em "+ Adicionar Endpoint"
+     - Configure para cada endpoint:
+       - Path (ex: `/api/users`)
+       - Método HTTP (GET, POST, PUT, DELETE)
+       - Requisições por segundo
+       - Duração em segundos
+       - Corpo da requisição (para métodos não-GET)
 
-4. **Análise de Resultados**
-   O gráfico mostra:
-   - Linha verde: requisições bem-sucedidas
-   - Linha vermelha: requisições com falha
-   
-   Estatísticas disponíveis:
-   - Total de requisições
-   - Número de sucessos
-   - Número de falhas
-   - Tempo médio de resposta
-   - Taxa de sucesso
+  3. **Execução do Benchmark**
+     - Clique em "Iniciar Benchmark"
+     - Observe o gráfico em tempo real
+     - Acompanhe o tempo restante
+     - Use "Parar Benchmark" para interromper o teste
 
-## Desenvolvimento
+  4. **Análise de Resultados**
+     O gráfico mostra:
+     - Linha verde: requisições bem-sucedidas
+     - Linha vermelha: requisições com falha
+     
+     Estatísticas disponíveis:
+     - Total de requisições
+     - Número de sucessos
+     - Número de falhas
+     - Tempo médio de resposta
+     - Taxa de sucesso
 
-### Estrutura do Projeto
-```
-hades-benchmark/
-├── src/
-│   ├── components/
-│   │   ├── BenchmarkForm.vue    # Formulário de configuração
-│   │   ├── BenchmarkChart.vue   # Componente do gráfico
-│   │   └── Benchmark.vue        # Componente principal
-│   ├── App.vue                  # Componente raiz
-│   └── main.js                  # Ponto de entrada
-├── public/
-├── dist/                        # Build da aplicação web
-├── dist_electron/              # Binários gerados
-└── package.json
-```
+  ## Desenvolvimento
 
-### Scripts Disponíveis
+  ### Estrutura do Projeto
+  ```
+  hades-benchmark/
+  ├── src/
+  │   ├── components/
+  │   │   ├── BenchmarkForm.vue    # Formulário de configuração
+  │   │   ├── BenchmarkChart.vue   # Componente do gráfico
+  │   │   └── Benchmark.vue        # Componente principal
+  │   ├── App.vue                  # Componente raiz
+  │   └── main.js                  # Ponto de entrada
+  ├── public/
+  ├── dist/                        # Build da aplicação web
+  ├── dist_electron/              # Binários gerados
+  └── package.json
+  ```
 
-- `npm run serve`: Inicia o servidor de desenvolvimento
-- `npm run build`: Gera a build da aplicação web
-- `npm run start`: Inicia a aplicação Electron
-- `npm run lint`: Executa o linter
-- `npm run build:mac`: Gera binário para macOS
-- `npm run build:linux`: Gera binário para Linux
-- `npm run build:win`: Gera binário para Windows
+  ### Scripts Disponíveis
 
-## Contribuindo
+  - `npm run serve`: Inicia o servidor de desenvolvimento
+  - `npm run build`: Gera a build da aplicação web
+  - `npm run start`: Inicia a aplicação Electron
+  - `npm run lint`: Executa o linter
+  - `npm run build:mac`: Gera binário para macOS
+  - `npm run build:linux`: Gera binário para Linux
+  - `npm run build:win`: Gera binário para Windows
 
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
-3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
-4. Push para a branch (`git push origin feature/nova-feature`)
-5. Abra um Pull Request
+  ## Contribuindo
 
-## Licença
+  1. Faça um fork do projeto
+  2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
+  3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
+  4. Push para a branch (`git push origin feature/nova-feature`)
+  5. Abra um Pull Request
 
-Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+  ## Licença
+
+  Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
