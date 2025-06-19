@@ -156,3 +156,6 @@
   ## Licença
 
   Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+
+ ## Estrelas do repositorio
+ [![Stargazers over time](https://starchart.cc/RattsTechServices/HadesBenchmark.svg?variant=adaptive)](https://starchart.cc/RattsTechServices/HadesBenchmark)
